@@ -9,20 +9,27 @@ import SceneKit
 import SwiftUI
 
 struct SphereView: View {
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
             // Background 3D Scene
             SceneView(
                 scene: {
+                    
                     let scene = SCNScene(named: "baffo.scn")!
 
-                    // Remove the default background
-                    scene.background.contents = nil
+
+                    if colorScheme == .dark {
+                        scene.background.contents = UIColor.systemGray6
+                    } else {
+                        scene.background.contents = UIColor.white
+                                      }
 
                     let cameraNode = SCNNode()
                     cameraNode.camera = SCNCamera()
                     cameraNode.position = SCNVector3(x: 0, y: 0, z: 5)
                     scene.rootNode.addChildNode(cameraNode)
+                    
 
                     // Add ambient light for overall illumination
                     let ambientLightNode = SCNNode()
@@ -69,12 +76,13 @@ struct SphereView: View {
                     for node in scene.rootNode.childNodes {
                         node.castsShadow = true
                     }
-
+                    
                     return scene
                 }(),
                 options: [.allowsCameraControl]
             )
             .ignoresSafeArea()
+            .background(Color.clear)
             VStack {
                 ZStack {
                     Text("READ")
