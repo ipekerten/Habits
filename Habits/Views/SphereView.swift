@@ -107,21 +107,30 @@ struct SphereView: View {
                 }
                 Spacer()
                 HStack(spacing: 15) {
-                    ForEach(1...7, id: \.self) { _ in
-                        Button {
-                            print("Icon tapped")
-                        } label: {
-                            Image(systemName: "circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(
-                                    Color(
-                                        red: 98 / 255, green: 0 / 255,
-                                        blue: 224 / 255)
-                                )
-                                .shadow(radius: 5)
+                    ForEach(daysForCurrentWeek()) { day in
+                        VStack(spacing: 5) {
+                            Button {
+                                print("Day \(day.number) tapped")
+                            } label: {
+                                Circle()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(
+                                        Color(red: 98 / 255, green: 0 / 255, blue: 224 / 255)
+                                    )
+                                    .shadow(radius: 3)
+                                    .overlay(
+                                        Text("\(day.number)")
+                                            .font(.headline)
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                            .buttonStyle(.plain)
+
+                            // Day name text
+                            Text(day.name)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
                         }
-                        .buttonStyle(.plain)
                     }
                 }
                 .padding(.bottom, 3)
