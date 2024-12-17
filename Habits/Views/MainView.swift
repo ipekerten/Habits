@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct MainView: View {
     @State private var isHabitLogged = false
     @State private var navigateToSphereView = false
@@ -20,14 +19,13 @@ struct MainView: View {
                     .ignoresSafeArea()
 
                 VStack {
+                    // App title with top-right button
                     ZStack {
-                        // Centered app title
                         Text("READ")
                             .font(.subheadline)
                             .fontWeight(.medium)
                             .padding()
 
-                        // Top-right button
                         HStack {
                             Spacer()
                             Button {
@@ -45,8 +43,8 @@ struct MainView: View {
 
                     Spacer()
 
+                    // Central animated button
                     Button {
-                        // Haptic feedback
                         let impactFeedback = UIImpactFeedbackGenerator(style: .heavy)
                         impactFeedback.impactOccurred()
 
@@ -55,22 +53,18 @@ struct MainView: View {
                         ) {
                             isHabitLogged.toggle()
                             if isHabitLogged {
-                                // Trigger a 1-second delay before navigating
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     navigateToSphereView = true
                                 }
                             }
                         }
-                        
-                       
-                        
                     } label: {
                         Image(isHabitLogged ? "ButtonDone" : "Button")
                             .resizable()
                             .scaledToFit()
                             .frame(width: isHabitLogged ? 300 : 280, height: isHabitLogged ? 300 : 280)
                             .foregroundColor(.white)
-                            .cornerRadius(isHabitLogged ? 300 : 280) // Smooth animation for size change
+                            .cornerRadius(isHabitLogged ? 300 : 280)
                             .shadow(radius: 2)
                             .overlay(
                                 Text(isHabitLogged ? "" : "READ")
@@ -81,11 +75,12 @@ struct MainView: View {
 
                     Spacer()
 
+                    // Dynamically aligned weekdays
                     HStack(spacing: 15) {
-                        ForEach(1...7, id: \.self) { day in
-                            VStack(spacing: 5) { // Stack the circle and day name vertically
+                        ForEach(daysForCurrentWeek()) { day in
+                            VStack(spacing: 5) {
                                 Button {
-                                    print("Day \(day) tapped")
+                                    print("Day \(day.number) tapped")
                                 } label: {
                                     Circle()
                                         .frame(width: 30, height: 30)
@@ -94,7 +89,7 @@ struct MainView: View {
                                         )
                                         .shadow(radius: 3)
                                         .overlay(
-                                            Text("\(day)")
+                                            Text("\(day.number)")
                                                 .font(.headline)
                                                 .foregroundColor(.white)
                                         )
@@ -102,13 +97,9 @@ struct MainView: View {
                                 .buttonStyle(.plain)
 
                                 // Day name text
-                                Text(
-                                    [
-                                        "THU", "FRI", "SAT", "SUN", "MON", "TUE", "TODAY",
-                                    ][day - 1]
-                                )
-                                .font(.footnote)
-                                .foregroundColor(.gray)
+                                Text(day.name)
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
                             }
                         }
                     }
@@ -121,6 +112,8 @@ struct MainView: View {
         }
     }
 }
+
+
 
 
 #Preview {
