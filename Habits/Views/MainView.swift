@@ -61,6 +61,9 @@ struct MainView: View {
                                 }
                             }
                         }
+                        
+                       
+                        
                     } label: {
                         Image(isHabitLogged ? "ButtonDone" : "Button")
                             .resizable()
