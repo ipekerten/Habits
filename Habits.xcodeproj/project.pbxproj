@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		7777A79D2D01048C008E8ACA /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7777A79D2D01048C008E8ACA /* Melius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Melius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		7777A79E2D01048C008E8ACA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7777A79D2D01048C008E8ACA /* Habits.app */,
+				7777A79D2D01048C008E8ACA /* Melius.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7777A79C2D01048C008E8ACA /* Habits */ = {
+		7777A79C2D01048C008E8ACA /* Melius */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7777A7AB2D01048C008E8ACA /* Build configuration list for PBXNativeTarget "Habits" */;
+			buildConfigurationList = 7777A7AB2D01048C008E8ACA /* Build configuration list for PBXNativeTarget "Melius" */;
 			buildPhases = (
 				7777A7992D01048C008E8ACA /* Sources */,
 				7777A79A2D01048C008E8ACA /* Frameworks */,
@@ -63,11 +63,11 @@
 			fileSystemSynchronizedGroups = (
 				7777A79F2D01048C008E8ACA /* Habits */,
 			);
-			name = Habits;
+			name = Melius;
 			packageProductDependencies = (
 			);
 			productName = Habits;
-			productReference = 7777A79D2D01048C008E8ACA /* Habits.app */;
+			productReference = 7777A79D2D01048C008E8ACA /* Melius.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7777A79C2D01048C008E8ACA /* Habits */,
+				7777A79C2D01048C008E8ACA /* Melius */,
 			);
 		};
 /* End PBXProject section */
@@ -314,7 +314,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7777A7AB2D01048C008E8ACA /* Build configuration list for PBXNativeTarget "Habits" */ = {
+		7777A7AB2D01048C008E8ACA /* Build configuration list for PBXNativeTarget "Melius" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7777A7AC2D01048C008E8ACA /* Debug */,
