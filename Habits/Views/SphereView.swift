@@ -102,7 +102,7 @@ struct SphereView: View {
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)
-                        .padding(.top, 1)
+                        .padding(.top, 2)
                 
                 Spacer()
                 
