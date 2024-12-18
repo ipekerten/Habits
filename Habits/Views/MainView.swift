@@ -22,7 +22,7 @@ struct MainView: View {
                     // App title with top-right button
                     ZStack {
                         Text("READ")
-                            .font(.subheadline)
+                            .font(.headline)
                             .fontWeight(.medium)
                             .padding()
 
@@ -53,7 +53,7 @@ struct MainView: View {
                         ) {
                             isHabitLogged.toggle()
                             if isHabitLogged {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                     navigateToSphereView = true
                                 }
                             }

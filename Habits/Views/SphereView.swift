@@ -27,7 +27,7 @@ struct SphereView: View {
 
                     let cameraNode = SCNNode()
                     cameraNode.camera = SCNCamera()
-                    cameraNode.position = SCNVector3(x: 0, y: 0, z: 5)
+                    cameraNode.position = SCNVector3(x: 0, y: 0.3, z: 5)
                     scene.rootNode.addChildNode(cameraNode)
                     
 
@@ -79,33 +79,33 @@ struct SphereView: View {
                     
                     return scene
                 }(),
+                
+                
                 options: [.allowsCameraControl]
+                
+                
+                    
             )
             .ignoresSafeArea()
             .background(Color.clear)
-            VStack {
-                ZStack {
-                    Text("READ")
-                        .font(.subheadline)
-                        .fontWeight(.medium)
-                        .padding()
-                    HStack {
-                        Spacer()
-                        Button {
-                            print("Top right button tapped")
-                        } label: {
-                            Image(systemName: "circle")
-                                .font(.title)
-                                .foregroundColor(
-                                    Color(
-                                        red: 98 / 255, green: 0 / 255,
-                                        blue: 224 / 255)
-                                )
-                                .padding()
-                        }
-                    }
-                }
+            
+            
+                VStack {
+                    Text("THE SPHERE")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.top, 50)
+                    
+                    
+                    Text("We are living our dream life with our color palette.")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 1)
+                
                 Spacer()
+                
                 HStack(spacing: 15) {
                     ForEach(daysForCurrentWeek()) { day in
                         VStack(spacing: 5) {
