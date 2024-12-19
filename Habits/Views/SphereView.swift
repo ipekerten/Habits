@@ -22,7 +22,7 @@ struct SphereView: View {
                     if colorScheme == .dark {
                         scene.background.contents = UIColor.systemGray6
                     } else {
-                        scene.background.contents = UIColor.white
+                        scene.background.contents = UIColor.systemGray6
                                       }
 
                     let cameraNode = SCNNode()
