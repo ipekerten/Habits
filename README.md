@@ -20,7 +20,7 @@ The app provides smooth animations and an intuitive interface that visualizes ta
 
 
 ### Installation
-1. Clone the repository: https://github.com/ipekerten/Habits.git
+1. Clone the repository: https://github.com/ipekerten/Melius.git
 2. Open the project in Xcode.
 3. Run the app on a simulator or connected device.
 
